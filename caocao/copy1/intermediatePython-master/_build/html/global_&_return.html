@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9. Global &amp; Return &mdash; Python Tips 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Python Tips 0.1 documentation" href="index.html"/>
+        <link rel="next" title="10. Mutation" href="mutation.html"/>
+        <link rel="prev" title="8. Decorators" href="decorators.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python Tips
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CaoNotes.html">1. *args and **kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="args_and_kwargs.html">2. *args and **kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">3. Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generators.html">4. Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_filter.html">5. Map, Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set_-_data_structure.html">6. <code class="docutils literal"><span class="pre">set</span></code> Data Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ternary_operators.html">7. Ternary Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorators.html">8. Decorators</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Global &amp; Return</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#multiple-return-values">9.1. Multiple return values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mutation.html">10. Mutation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="__slots__magic.html">11. __slots__ Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtual_environment.html">12. Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collections.html">13. Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumerate.html">14. Enumerate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="object_introspection.html">15. Object introspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehensions.html">16. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">17. Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambdas.html">18. Lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="one_liners.html">19. One-Liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_-_else.html">20. For - Else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_c_extension.html">21. Python C extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open_function.html">22. <code class="docutils literal"><span class="pre">open</span></code> Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="targeting_python_2_3.html">23. Targeting Python 2+3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coroutines.html">24. Coroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_caching.html">25. Function caching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="context_managers.html">26. Context managers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python Tips</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>9. Global &amp; Return</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/global_&amp;_return.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="global-return">
+<h1>9. Global &amp; Return<a class="headerlink" href="#global-return" title="Permalink to this headline">¶</a></h1>
+<p>You might have encountered some functions written in python which have a
+<code class="docutils literal"><span class="pre">return</span></code> keyword in the end of the function. Do you know what it does? It
+is similar to return in other languages. Lets examine this little
+function:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value1</span> <span class="o">+</span> <span class="n">value2</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># Output: 8</span>
+</pre></div>
+</div>
+<p>The function above takes two values as input and then output their
+addition. We could have also done:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span><span class="n">value2</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">value1</span> <span class="o">+</span> <span class="n">value2</span>
+
+<span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># Output: 8</span>
+</pre></div>
+</div>
+<p>So first lets talk about the first bit of code which involves the
+<code class="docutils literal"><span class="pre">return</span></code> keyword. What that function is doing is that it is assigning
+the value to the variable which is calling that function which in our
+case is <code class="docutils literal"><span class="pre">result</span></code>. In most cases and you won’t need to use the
+<code class="docutils literal"><span class="pre">global</span></code> keyword. However lets examine the other bit of code as well
+which includes the <code class="docutils literal"><span class="pre">global</span></code> keyword. So what that function is doing is
+that it is making a global variable <code class="docutils literal"><span class="pre">result</span></code>. What does global mean
+here? Global variable means that we can access that variable outside the
+scope of the function as well. Let me demonstrate it with an example:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># first without the global variable</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">value1</span> <span class="o">+</span> <span class="n">value2</span>
+
+<span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># Oh crap, we encountered an exception. Why is it so?</span>
+<span class="c1"># the python interpreter is telling us that we do not</span>
+<span class="c1"># have any variable with the name of result. It is so</span>
+<span class="c1"># because the result variable is only accessible inside</span>
+<span class="c1"># the function in which it is created if it is not global.</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span>
+    <span class="n">result</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;result&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+
+<span class="c1"># Now lets run the same code but after making the result</span>
+<span class="c1"># variable global</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">result</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">value1</span> <span class="o">+</span> <span class="n">value2</span>
+
+<span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">result</span>
+<span class="mi">6</span>
+</pre></div>
+</div>
+<p>So hopefully there are no errors in the second run as expected. In
+practical programming you should try to stay away from <code class="docutils literal"><span class="pre">global</span></code>
+keyword as it only makes life difficult by introducing unwanted variables
+to the global scope.</p>
+<div class="section" id="multiple-return-values">
+<h2>9.1. Multiple return values<a class="headerlink" href="#multiple-return-values" title="Permalink to this headline">¶</a></h2>
+<p>So what if you want to return two variables from a function instead of one? There are a couple of approaches which new programmers take. The most famous approach is to use <code class="docutils literal"><span class="pre">global</span></code> keyword. Let’s take a look at a useless example:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">profile</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">name</span>
+    <span class="k">global</span> <span class="n">age</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Danny&quot;</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">profile</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="c1"># Output: Danny</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<span class="c1"># Output: 30</span>
+</pre></div>
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>Note:<a href="#id3"><span class="problematic" id="id4">**</span></a>Don’t try to use the above mentioned method. I repeat, don’t try to use the above mentioned method!</p>
+<p>Some try to solve this problem by <em>returning</em> a <code class="docutils literal"><span class="pre">tuple</span></code>, <code class="docutils literal"><span class="pre">list</span></code> or <code class="docutils literal"><span class="pre">dict</span></code> with the required values after the function terminates. It is one way to do it and works like a charm:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">profile</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Danny&quot;</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+
+<span class="n">profile_data</span> <span class="o">=</span> <span class="n">profile</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">profile_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># Output: Danny</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">profile_data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># Output: 30</span>
+</pre></div>
+</div>
+<p>Or by more common convention:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">profile</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Danny&quot;</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="k">return</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span>
+
+<span class="n">profile_name</span><span class="p">,</span> <span class="n">profile_age</span> <span class="o">=</span> <span class="n">profile</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">profile_name</span><span class="p">)</span>
+<span class="c1"># Output: Danny</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">profile_age</span><span class="p">)</span>
+<span class="c1"># Output: 30</span>
+</pre></div>
+</div>
+<p>This is a better way to do it along with returning <code class="docutils literal"><span class="pre">lists</span></code> and <code class="docutils literal"><span class="pre">dicts</span></code>. Don’t use <code class="docutils literal"><span class="pre">global</span></code> keyword unless you know what you are doing. <code class="docutils literal"><span class="pre">global</span></code> might be a better option in a few cases but is not in most of them.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mutation.html" class="btn btn-neutral float-right" title="10. Mutation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="decorators.html" class="btn btn-neutral" title="8. Decorators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Muhammad Yasoob Ullah Khalid.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

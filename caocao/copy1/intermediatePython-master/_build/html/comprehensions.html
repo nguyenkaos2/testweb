@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>16. Comprehensions &mdash; Python Tips 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Python Tips 0.1 documentation" href="index.html"/>
+        <link rel="next" title="17. Exceptions" href="exceptions.html"/>
+        <link rel="prev" title="15. Object introspection" href="object_introspection.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python Tips
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CaoNotes.html">1. *args and **kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="args_and_kwargs.html">2. *args and **kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">3. Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generators.html">4. Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_filter.html">5. Map, Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set_-_data_structure.html">6. <code class="docutils literal"><span class="pre">set</span></code> Data Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ternary_operators.html">7. Ternary Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorators.html">8. Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global_&amp;_return.html">9. Global &amp; Return</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mutation.html">10. Mutation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="__slots__magic.html">11. __slots__ Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtual_environment.html">12. Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collections.html">13. Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumerate.html">14. Enumerate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="object_introspection.html">15. Object introspection</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. Comprehensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#list-comprehensions">16.1. <code class="docutils literal"><span class="pre">list</span></code> comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dict-comprehensions">16.2. <code class="docutils literal"><span class="pre">dict</span></code> comprehensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-comprehensions">16.3. <code class="docutils literal"><span class="pre">set</span></code> comprehensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">17. Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambdas.html">18. Lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="one_liners.html">19. One-Liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_-_else.html">20. For - Else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_c_extension.html">21. Python C extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open_function.html">22. <code class="docutils literal"><span class="pre">open</span></code> Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="targeting_python_2_3.html">23. Targeting Python 2+3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coroutines.html">24. Coroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_caching.html">25. Function caching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="context_managers.html">26. Context managers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python Tips</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>16. Comprehensions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/comprehensions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="comprehensions">
+<h1>16. Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">¶</a></h1>
+<p>Comprehensions are a feature of Python which I would really miss if I
+ever have to leave it. Comprehensions are constructs that allow
+sequences to be built from other sequences. Three types of
+comprehensions are supported in both Python 2 and Python 3:</p>
+<ul class="simple">
+<li>list comprehensions</li>
+<li>dictionary comprehensions</li>
+<li>set comprehensions</li>
+</ul>
+<p>We will discuss them one by one. Once you get the hang of using <code class="docutils literal"><span class="pre">list</span></code>
+comprehensions then you can use any of them easily.</p>
+<div class="section" id="list-comprehensions">
+<h2>16.1. <code class="docutils literal"><span class="pre">list</span></code> comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">¶</a></h2>
+<p>List comprehensions provide a short and concise way to create lists. It
+consists of square brackets containing an expression followed by a
+<code class="docutils literal"><span class="pre">for</span></code> clause, then zero or more <code class="docutils literal"><span class="pre">for</span></code> or <code class="docutils literal"><span class="pre">if</span></code> clauses. The
+expressions can be anything, meaning you can put in all kinds of objects
+in lists. The result would be a new list made after the evaluation of
+the expression in context of the <code class="docutils literal"><span class="pre">if</span></code> and <code class="docutils literal"><span class="pre">for</span></code> clauses.</p>
+<p><strong>Blueprint</strong></p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="p">[</span><span class="n">out_exp</span> <span class="k">for</span> <span class="n">out_exp</span> <span class="ow">in</span> <span class="n">input_list</span> <span class="k">if</span> <span class="n">out_exp</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Here is a short example:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">multiples</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multiples</span><span class="p">)</span>
+<span class="c1"># Output: [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]</span>
+</pre></div>
+</div>
+<p>This can be really useful to make lists quickly. It is even preferred by
+some instead of the <code class="docutils literal"><span class="pre">filter</span></code> function. List comprehensions really
+shine when you want to supply a list to a method or function to make a
+new list by appending to it in each iteration of the <code class="docutils literal"><span class="pre">for</span></code> loop. For
+instance you would usually do something like this:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">squared</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can simplify it using list comprehensions. For example:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">squared</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dict-comprehensions">
+<h2>16.2. <code class="docutils literal"><span class="pre">dict</span></code> comprehensions<a class="headerlink" href="#dict-comprehensions" title="Permalink to this headline">¶</a></h2>
+<p>They are used in a similar way. Here is an example which I found
+recently:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">mcase</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+
+<span class="n">mcase_frequency</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="n">mcase</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">mcase</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">mcase</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1"># mcase_frequency == {&#39;a&#39;: 17, &#39;z&#39;: 3, &#39;b&#39;: 34}</span>
+</pre></div>
+</div>
+<p>In the above example we are combining the values of keys which are same
+but in different typecase. I personally do not use <code class="docutils literal"><span class="pre">dict</span></code>
+comprehensions a lot. You can also quickly switch keys and values of a dictionary:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">some_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="set-comprehensions">
+<h2>16.3. <code class="docutils literal"><span class="pre">set</span></code> comprehensions<a class="headerlink" href="#set-comprehensions" title="Permalink to this headline">¶</a></h2>
+<p>They are also similar to list comprehensions. The only difference is
+that they use braces <code class="docutils literal"><span class="pre">{}</span></code>. Here is an example:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">squared</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squared</span><span class="p">)</span>
+<span class="c1"># Output: {1, 4}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exceptions.html" class="btn btn-neutral float-right" title="17. Exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="object_introspection.html" class="btn btn-neutral" title="15. Object introspection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Muhammad Yasoob Ullah Khalid.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

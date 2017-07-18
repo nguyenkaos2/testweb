@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>19. One-Liners &mdash; Python Tips 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Python Tips 0.1 documentation" href="index.html"/>
+        <link rel="next" title="20. For - Else" href="for_-_else.html"/>
+        <link rel="prev" title="18. Lambdas" href="lambdas.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python Tips
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CaoNotes.html">1. *args and **kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="args_and_kwargs.html">2. *args and **kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">3. Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generators.html">4. Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_filter.html">5. Map, Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set_-_data_structure.html">6. <code class="docutils literal"><span class="pre">set</span></code> Data Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ternary_operators.html">7. Ternary Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorators.html">8. Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global_&amp;_return.html">9. Global &amp; Return</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mutation.html">10. Mutation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="__slots__magic.html">11. __slots__ Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtual_environment.html">12. Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collections.html">13. Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumerate.html">14. Enumerate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="object_introspection.html">15. Object introspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehensions.html">16. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">17. Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambdas.html">18. Lambdas</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">19. One-Liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_-_else.html">20. For - Else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_c_extension.html">21. Python C extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open_function.html">22. <code class="docutils literal"><span class="pre">open</span></code> Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="targeting_python_2_3.html">23. Targeting Python 2+3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coroutines.html">24. Coroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_caching.html">25. Function caching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="context_managers.html">26. Context managers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python Tips</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>19. One-Liners</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/one_liners.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="one-liners">
+<h1>19. One-Liners<a class="headerlink" href="#one-liners" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter I will show you some one-liner Python commands which can
+be really helpful.</p>
+<p><strong>Simple Web Server</strong></p>
+<p>Ever wanted to quickly share a file over a network? Well you are in
+luck. Python has a feature just for you. Go to the directory
+which you want to serve over the network and write the following code in
+your terminal:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Python 2</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">SimpleHTTPServer</span>
+
+<span class="c1"># Python 3</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span>
+</pre></div>
+</div>
+<p><strong>Pretty Printing</strong></p>
+<p>You can print a list and dictionary in a beautiful format in the Python
+repl. Here is the relevant code:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pprint</span>
+
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Yasoob&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="s1">&#39;undefined&#39;</span><span class="p">,</span> <span class="s1">&#39;personality&#39;</span><span class="p">:</span> <span class="s1">&#39;awesome&#39;</span><span class="p">}</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is more effective on <code class="docutils literal"><span class="pre">dict</span></code> s. Moreover, if you want to pretty print
+json quickly from a file then you can simply do:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">file</span><span class="o">.</span><span class="n">json</span> <span class="o">|</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">json</span><span class="o">.</span><span class="n">tool</span>
+</pre></div>
+</div>
+<p><strong>Profiling a script</strong></p>
+<p>This can be extremely helpful in pinpointing the bottlenecks in your
+scripts:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">cProfile</span> <span class="n">my_script</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Note: <code class="docutils literal"><span class="pre">cProfile</span></code> is a faster implementation of <code class="docutils literal"><span class="pre">profile</span></code> as it is
+written in c</p>
+<p><strong>CSV to json</strong></p>
+<p>Run this in the terminal:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import csv,json;print json.dumps(list(csv.reader(open(&#39;csv_file.csv&#39;))))&quot;</span>
+</pre></div>
+</div>
+<p>Make sure that you replace <code class="docutils literal"><span class="pre">csv_file.csv</span></code> to the relevant file name.</p>
+<p><strong>List Flattening</strong></p>
+<p>You can quickly and easily flatten a list using
+<code class="docutils literal"><span class="pre">itertools.chain.from_iterable</span></code> from the <code class="docutils literal"><span class="pre">itertools</span></code> package. Here
+is a simple example:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">a_list</span><span class="p">)))</span>
+<span class="c1"># Output: [1, 2, 3, 4, 5, 6]</span>
+
+<span class="c1"># or</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="o">*</span><span class="n">a_list</span><span class="p">)))</span>
+<span class="c1"># Output: [1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+</div>
+<p><strong>One-Line Constructors</strong></p>
+<p>Avoid a lot of boilerplate assignments when initializing a class</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;self&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Additional one-liners can be found on the <a class="reference external" href="https://wiki.python.org/moin/Powerful%20Python%20One-Liners">Python
+website</a>.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="for_-_else.html" class="btn btn-neutral float-right" title="20. For - Else" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lambdas.html" class="btn btn-neutral" title="18. Lambdas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Muhammad Yasoob Ullah Khalid.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

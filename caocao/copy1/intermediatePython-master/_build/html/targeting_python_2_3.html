@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>23. Targeting Python 2+3 &mdash; Python Tips 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Python Tips 0.1 documentation" href="index.html"/>
+        <link rel="next" title="24. Coroutines" href="coroutines.html"/>
+        <link rel="prev" title="22. open Function" href="open_function.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python Tips
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CaoNotes.html">1. *args and **kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="args_and_kwargs.html">2. *args and **kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">3. Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generators.html">4. Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="map_filter.html">5. Map, Filter and Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="set_-_data_structure.html">6. <code class="docutils literal"><span class="pre">set</span></code> Data Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ternary_operators.html">7. Ternary Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decorators.html">8. Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global_&amp;_return.html">9. Global &amp; Return</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mutation.html">10. Mutation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="__slots__magic.html">11. __slots__ Magic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtual_environment.html">12. Virtual Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collections.html">13. Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enumerate.html">14. Enumerate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="object_introspection.html">15. Object introspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="comprehensions.html">16. Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions.html">17. Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lambdas.html">18. Lambdas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="one_liners.html">19. One-Liners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_-_else.html">20. For - Else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_c_extension.html">21. Python C extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="open_function.html">22. <code class="docutils literal"><span class="pre">open</span></code> Function</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">23. Targeting Python 2+3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coroutines.html">24. Coroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_caching.html">25. Function caching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="context_managers.html">26. Context managers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python Tips</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>23. Targeting Python 2+3</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/targeting_python_2_3.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="targeting-python-2-3">
+<h1>23. Targeting Python 2+3<a class="headerlink" href="#targeting-python-2-3" title="Permalink to this headline">¶</a></h1>
+<p>In a lot of cases you might want to develop programs which can be run in
+both Python 2+ and 3+.</p>
+<p>Just imagine that you have a very popular Python module which is used by
+hundreds of people but not all of them have Python 2 or 3. In that case
+you have two choices. The first one is to distribute 2 modules, one for
+Python 2 and the other for Python 3. The other choice is to modify your
+current code and make it compatible with both Python 2 and 3.</p>
+<p>In this section I am going to highlight some of the tricks which you can
+employ to make a script compatible with both of them.</p>
+<p><strong>Future imports</strong></p>
+<p>The first and most important method is to use <code class="docutils literal"><span class="pre">__future__</span></code> imports. It
+allows you to import Python 3 functionality in Python 2. Here are a couple
+examples:</p>
+<p>Context managers were new in Python 2.6+. For using them in Python 2.5 you can use:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">with_statement</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">print</span></code> was changed to a function in Python 3. If you want to use it
+in Python 2 you can import it from <code class="docutils literal"><span class="pre">__future__</span></code>:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span>
+<span class="c1"># Output:</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
+<span class="c1"># Output: &lt;built-in function print&gt;</span>
+</pre></div>
+</div>
+<p><strong>Dealing with module renaming</strong></p>
+<p>First, tell me how you import packages in your script ? Most of us do
+this :</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">foo</span>
+<span class="c1"># or</span>
+<span class="kn">from</span> <span class="nn">foo</span> <span class="k">import</span> <span class="n">bar</span>
+</pre></div>
+</div>
+<p>Do you know that you can do something like this as well?</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">foo</span> <span class="k">as</span> <span class="nn">foo</span>
+</pre></div>
+</div>
+<p>I know its function is the same as the above listed code but it is vital
+for making your script compatible with Python 2 and 3. Now examine the
+code below :</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">urllib.request</span> <span class="k">as</span> <span class="nn">urllib_request</span>  <span class="c1"># for Python 3</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">urllib2</span> <span class="k">as</span> <span class="nn">urllib_request</span>  <span class="c1"># for Python 2</span>
+</pre></div>
+</div>
+<p>So let me explain the above code a little. We are wrapping our importing
+code in a <code class="docutils literal"><span class="pre">try/except</span></code> clause. We are doing it because in Python 2 there is
+no <code class="docutils literal"><span class="pre">urllib.request</span></code> module so this would result in an <code class="docutils literal"><span class="pre">ImportError</span></code>. The
+functionality of <code class="docutils literal"><span class="pre">urllib.request</span></code> is provided by the <code class="docutils literal"><span class="pre">urllib2</span></code> module in
+Python 2. So, when using Python 2, we try to import <code class="docutils literal"><span class="pre">urllib.request</span></code> and
+if we get an <code class="docutils literal"><span class="pre">ImportError</span></code> then we tell Python to import <code class="docutils literal"><span class="pre">urllib2</span></code> instead.</p>
+<p>The final thing you need to know about is the <code class="docutils literal"><span class="pre">as</span></code> keyword. It is
+mapping the imported module to <code class="docutils literal"><span class="pre">urllib_request</span></code>. So that all of
+the classes and methods within <code class="docutils literal"><span class="pre">urllib2</span></code> are available to us via the alias
+<code class="docutils literal"><span class="pre">urllib_request</span></code>.</p>
+<p><strong>Obsolete Python 2 builtins</strong></p>
+<p>Another thing to keep in mind is that there are 12 Python 2 builtins
+which have been removed from Python 3. Make sure that you don’t use them
+in Python 2 in order to make your code compatible with Python 3.
+Here is a way to enforce that you abandon these 12 builtins in Python 2 as
+well:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">future.builtins.disabled</span> <span class="k">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Now whenever you try to use the modules which are abandoned in Python 3,
+it raises a <code class="docutils literal"><span class="pre">NameError</span></code> like this:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">future.builtins.disabled</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="n">apply</span><span class="p">()</span>
+<span class="c1"># Output: NameError: obsolete Python 2 builtin apply is disabled</span>
+</pre></div>
+</div>
+<p><strong>External standard-library backports</strong></p>
+<p>There are a few packages in the wild which provide Python 3
+functionality in Python 2. For instance, we have:</p>
+<ul class="simple">
+<li>enum <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">enum34</span></code></li>
+<li>singledispatch <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">singledispatch</span></code></li>
+<li>pathlib <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pathlib</span></code></li>
+</ul>
+<p>For further reading, the Python documentation has a <a class="reference external" href="https://docs.python.org/3/howto/pyporting.html">comprehensive guide</a> of steps you need to
+take to make your code compatible with both Python 2 and 3.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="coroutines.html" class="btn btn-neutral float-right" title="24. Coroutines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="open_function.html" class="btn btn-neutral" title="22. open Function" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Muhammad Yasoob Ullah Khalid.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
