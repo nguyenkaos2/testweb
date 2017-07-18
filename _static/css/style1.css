@@ -1,0 +1,17 @@
+h1 {
+	color:green;
+}
+
+body {
+    
+	background-color : red;
+	background-repeat : no-repeat;
+	background-attachment : fixed;
+	
+	font-family:'Arial';
+	font-style:italic;
+	font-size:15px;
+	#font-weight:bold;
+	text-align:center;
+}
+ 
